@@ -36,7 +36,6 @@ public class MyMainClass extends ApplicationAdapter {
 		batch.begin();
 		dinozavr.draw(batch);
 		batch.end();
-//		debugRenderer.render(world, camera.combined);
 		debugRenderer.render(world, camera.combined);
 	}
 	
