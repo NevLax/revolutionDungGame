@@ -20,12 +20,13 @@ public class MyMainClass extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
 		dino = new Texture(Gdx.files.internal("dinoCharacters/sheets/DinoSprites-doux.png"));
 		world = new World(new Vector2(0, 0), true);
 		dinozavr = new Dino(dino, world);
 		debugRenderer = new Box2DDebugRenderer();
-		camera = new OrthographicCamera();
+		camera = new OrthographicCamera(600,400);
+		batch = new SpriteBatch();
+		batch.setProjectionMatrix(camera.combined);
 	}
 
 	@Override
@@ -35,6 +36,7 @@ public class MyMainClass extends ApplicationAdapter {
 		batch.begin();
 		dinozavr.draw(batch);
 		batch.end();
+//		debugRenderer.render(world, camera.combined);
 		debugRenderer.render(world, camera.combined);
 	}
 	

@@ -39,13 +39,13 @@ public class MyAnimation {
 
         //удивительный метоод рисования анимации
         if(timeAnimation < timeStep){
-            batch.draw(wait0, vector.x, vector.y);
+            batch.draw(wait0, vector.x-12, vector.y-12);
         } else if (timeAnimation < timeStep * 2) {
-            batch.draw(wait1, vector.x, vector.y);
+            batch.draw(wait1, vector.x-12, vector.y-12);
         } else if (timeAnimation < timeStep * 3) {
-            batch.draw(wait2, vector.x, vector.y);
+            batch.draw(wait2, vector.x-12, vector.y-12);
         } else {
-            batch.draw(wait3, vector.x, vector.y);
+            batch.draw(wait3, vector.x-12, vector.y-12);
         }
     }
 }

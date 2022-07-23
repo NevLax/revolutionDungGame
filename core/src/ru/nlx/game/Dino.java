@@ -17,12 +17,12 @@ public class Dino {
         wait = new MyAnimation(texture, 24, 24,0.25f);
         bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
-        bodyDef.position.set(12, 12);
+        bodyDef.position.set(0, 0);
 
         body = world.createBody(bodyDef);
 
         circle = new CircleShape();
-        circle.setRadius(12f);
+        circle.setRadius(8f);
 
         fixtureDef = new FixtureDef();
         fixtureDef.shape = circle;
@@ -35,7 +35,7 @@ public class Dino {
 
     public void draw(SpriteBatch batch){
         wait.render(batch, body.getPosition());
-        body.applyLinearImpulse(Vector2.X, Vector2.Zero, false);
+        body.applyLinearImpulse(new Vector2(5f, 0), Vector2.Zero, false);
     }
 
     public void dispose(){
