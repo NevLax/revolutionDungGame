@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 
 public class MyAnimation {
 
@@ -26,7 +27,7 @@ public class MyAnimation {
     }
 
 
-    public void render(SpriteBatch batch) {
+    public void render(SpriteBatch batch, Vector2 vector) {
 
         //счетчик времени, складываем в счетчик время затраченное на предыдущий кадр
         timeAnimation += Gdx.graphics.getDeltaTime();
@@ -38,13 +39,13 @@ public class MyAnimation {
 
         //удивительный метоод рисования анимации
         if(timeAnimation < timeStep){
-            batch.draw(wait0, 0f, 0f);
+            batch.draw(wait0, vector.x, vector.y);
         } else if (timeAnimation < timeStep * 2) {
-            batch.draw(wait1, 0f, 0f);
+            batch.draw(wait1, vector.x, vector.y);
         } else if (timeAnimation < timeStep * 3) {
-            batch.draw(wait2, 0f, 0f);
+            batch.draw(wait2, vector.x, vector.y);
         } else {
-            batch.draw(wait3, 0f, 0f);
+            batch.draw(wait3, vector.x, vector.y);
         }
     }
 }
