@@ -1,4 +1,4 @@
-package ru.nlx.game;
+package ru.nlx.game.Dino;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -8,12 +8,14 @@ import com.badlogic.gdx.math.Vector2;
 public class DinoController {
 
     float timeKoff;
+    float walkKof;
     Vector2 vector;
     Vector2 buff;
     Interpolation interpol;
 
     public DinoController(){
         timeKoff = 1f;
+        walkKof = 120f;
         vector = new Vector2();
         buff = new Vector2();
         interpol = new Interpolation.SwingOut(0.2f);
@@ -73,5 +75,9 @@ public class DinoController {
 
     private Vector2 invert(){
         return new Vector2(buff.y, buff.x);
+    }
+
+    public boolean isWalk(){
+        return ((buff.y * buff.y) + (buff.x * buff.x)) > walkKof;
     }
 }

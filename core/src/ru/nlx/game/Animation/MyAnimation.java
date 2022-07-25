@@ -1,4 +1,4 @@
-package ru.nlx.game;
+package ru.nlx.game.Animation;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
+import ru.nlx.game.Animation.FrameInterval;
 
 public class MyAnimation {
 
@@ -39,5 +40,9 @@ public class MyAnimation {
         currentFrame = anim.getKeyFrame(timeAnimation, true);                   //находим текущий кадр по продолжительсти
 
         batch.draw(currentFrame, vector.x-12, vector.y-12, 24, 24); //рисуем по положению физ.тела
+    }
+
+    public void timeToZero(){
+        timeAnimation = 0;
     }
 }

@@ -1,4 +1,4 @@
-package ru.nlx.game;
+package ru.nlx.game.Animation;
 
 public class FrameInterval {                    //контейнер данных с-по кадр из атласа, чисто для понятности и красоты
     private final int from;                     //с какого

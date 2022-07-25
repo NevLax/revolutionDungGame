@@ -1,4 +1,4 @@
-package ru.nlx.game;
+package ru.nlx.game.Dino;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
