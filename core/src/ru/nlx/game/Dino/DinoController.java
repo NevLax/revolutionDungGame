@@ -80,4 +80,8 @@ public class DinoController {
     public boolean isWalk(){
         return ((buff.y * buff.y) + (buff.x * buff.x)) > walkKof;
     }
+
+    public boolean walkToLeft(){
+        return invert().x < 0f;
+    }
 }

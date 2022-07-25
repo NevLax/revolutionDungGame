@@ -39,13 +39,13 @@ public class Dino {
                 isWalking = !isWalking;
                 walk.timeToZero();
             }
-            walk.render(batch, body.getPosition());
+            walk.render(batch, body.getPosition(), frameResolution, control.walkToLeft());
         }   else {
             if (!isWalking){
                 isWalking = !isWalking;
                 wait.timeToZero();
             }
-            wait.render(batch, body.getPosition());
+            wait.render(batch, body.getPosition(), frameResolution, control.walkToLeft());
         }
     }
 
