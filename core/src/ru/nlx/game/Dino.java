@@ -6,6 +6,7 @@ import com.badlogic.gdx.physics.box2d.*;
 
 public class Dino {
     MyAnimation wait;
+    FrameInterval intervalWait;
     BodyDef bodyDef;
     Body body;
     CircleShape circle;
@@ -15,7 +16,8 @@ public class Dino {
     DinoController control;
 
     public Dino(Texture texture, World world){
-        wait = new MyAnimation(texture, 24, 24,0.25f);
+        intervalWait = new FrameInterval(1, 4);
+        wait = new MyAnimation(texture, 0.25f, 24, 24, intervalWait);
         koff = 50f;
         control = new DinoController();
 
