@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import ru.nlx.game.Animation.*;
+import ru.nlx.game.MoveInput;
 
 public class Dino {
     MyAnimation wait;
@@ -18,7 +19,7 @@ public class Dino {
     DinoController control;
     DinoFisics body;
 
-    public Dino(Texture texture, World world){
+    public Dino(Texture texture, World world, MoveInput moveInput){
         isWalking = false;
         animSpeed = 0.1f;
         frameResolution = 24;
@@ -27,7 +28,7 @@ public class Dino {
         wait = new MyAnimation(texture, animSpeed, frameResolution, frameResolution, intervalWait);
         walk = new MyAnimation(texture, animSpeed, frameResolution, frameResolution, intervalWalk);
         koff = 50f;
-        control = new DinoController();
+        control = new DinoController(moveInput);
 
         body = new DinoFisics(world, 0f, 0f, new Vector2(8f, 8f));
     }

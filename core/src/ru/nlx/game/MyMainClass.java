@@ -18,13 +18,18 @@ public class MyMainClass extends ApplicationAdapter {
 	World world;
 	Box2DDebugRenderer debugRenderer;
 	OrthographicCamera camera;
+	private final MoveInput moveInput;
 	boolean debugRenderBox2D = false;
-	
+
+	public MyMainClass(MoveInput moveInput){
+		this.moveInput = moveInput;
+	}
 	@Override
 	public void create () {
+
 		dino = new Texture(Gdx.files.internal("dinoCharacters/sheets/DinoSprites-doux.png"));
 		world = new World(new Vector2(0, 0), true);
-		dinozavr = new Dino(dino, world);
+		dinozavr = new Dino(dino, world, moveInput);
 		debugRenderer = new Box2DDebugRenderer();
 		camera = new OrthographicCamera(600,400);
 		batch = new SpriteBatch();
