@@ -18,6 +18,7 @@ public class MyMainClass extends ApplicationAdapter {
 	World world;
 	Box2DDebugRenderer debugRenderer;
 	OrthographicCamera camera;
+	boolean debugRenderBox2D = false;
 	
 	@Override
 	public void create () {
@@ -37,7 +38,7 @@ public class MyMainClass extends ApplicationAdapter {
 		batch.begin();
 		dinozavr.draw(batch);
 		batch.end();
-		debugRenderer.render(world, camera.combined);
+		if (debugRenderBox2D) debugRenderer.render(world, camera.combined);
 	}
 	
 	@Override

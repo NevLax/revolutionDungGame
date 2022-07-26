@@ -2,6 +2,7 @@ package ru.nlx.game.Dino;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import ru.nlx.game.Animation.*;
 
@@ -28,7 +29,7 @@ public class Dino {
         koff = 50f;
         control = new DinoController();
 
-        body = new DinoFisics(world, 0f, 0f, 8f);
+        body = new DinoFisics(world, 0f, 0f, new Vector2(8f, 8f));
     }
 
     public void draw(SpriteBatch batch){

@@ -8,22 +8,21 @@ public class DinoFisics {
 
     BodyDef bodyDef;
     Body body;
-    CircleShape circle;
+    PolygonShape poly;
     FixtureDef fixtureDef;
     Fixture fixture;
 
-    public DinoFisics (World world, float posX, float posY, float radius){
+    public DinoFisics (World world, float posX, float posY, Vector2 polySize) {
         bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.KinematicBody;
         bodyDef.position.set(posX, posY);
 
         body = world.createBody(bodyDef);
-
-        circle = new CircleShape();
-        circle.setRadius(radius);
+        poly = new PolygonShape();
+        poly.setAsBox(polySize.x, polySize.y);
 
         fixtureDef = new FixtureDef();
-        fixtureDef.shape = circle;
+        fixtureDef.shape = poly;
         fixtureDef.density = 0.5f;
         fixtureDef.friction = 0.4f;
         fixtureDef.restitution = 1f;
@@ -40,6 +39,6 @@ public class DinoFisics {
     }
 
     public void dispose(){
-        circle.dispose();
+        poly.dispose();
     }
 }
