@@ -1,7 +1,6 @@
 package ru.nlx.game.Dino;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.Vector2;
 import ru.nlx.game.MoveInput;

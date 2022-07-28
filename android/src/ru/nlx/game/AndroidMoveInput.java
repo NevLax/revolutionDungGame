@@ -6,6 +6,6 @@ public class AndroidMoveInput implements MoveInput{
 
     @Override
     public Vector2 moveDirect(float speedFactor) {
-        return null;
+        return Vector2.Zero;
     }
 }
